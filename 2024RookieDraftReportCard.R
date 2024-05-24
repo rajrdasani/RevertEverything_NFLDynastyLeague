@@ -1,6 +1,6 @@
 #install.packages("knitr")
 #install.packages("kableExtra")
-#install.packages("webshot")
+#install.packages("webshot2")
 #install.packages("htmlwidgets")
 
 library(knitr)
@@ -35,5 +35,6 @@ report_card %>%
                 full_width = F) %>%
   column_spec(1, bold = T) %>%
   column_spec(3, width = "30em") %>%
-  add_header_above(c(" " = 1, "2024 Rookie Draft Report Card" = 2)) %>%
+  add_header_above(c(" " = 1, "AfDP: Average Fantasy Draft Position; AnDP: Average NFL Draft Position" = 2), bold = F, italic = T) %>% 
+  add_header_above(c(" " = 1, "2024 Rookie Draft Report Card" = 2), bold = F, extra_css = "font-size: 30px;") %>%
   save_kable("reportcard.png")
